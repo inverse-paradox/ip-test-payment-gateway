@@ -41,6 +41,9 @@ Yes, it fully supports WooCommerce Subscriptions, including functionalities such
 
 == Changelog ==
 
+= 1.1.1 =
+- Generate a transaction ID for each test payment processed
+
 = 1.1.0 =
 - Added support for WooCommerce Subscriptions advanced features.
 - Improved settings configuration and form field validation.

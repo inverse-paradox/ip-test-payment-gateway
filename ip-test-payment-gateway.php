@@ -3,7 +3,7 @@
  * Plugin Name: IP Test Payment Gateway
  * Plugin URI: https://www.inverseparadox.com
  * Description: A simple WooCommerce payment gateway for testing purposes that supports subscriptions.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Inverse Paradox
  * Author URI: https://www.inverseparadox.com
  * Text Domain: ip-test-gateway
@@ -95,6 +95,12 @@ function ip_init_test_payment_gateway() {
          */
         public function process_payment( $order_id ) {
             $order = wc_get_order( $order_id );
+
+            // Generate a unique transaction ID.
+            $transaction_id = uniqid('iptestpay_');
+
+            // Set the transaction ID.
+            $order->set_transaction_id( $transaction_id );
 
             // Mark the order as complete.
             $order->payment_complete();
